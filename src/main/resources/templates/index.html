@@ -18,16 +18,19 @@
 			</thead>
 			<tbody>
 				<tr th:each="area:${areas}"> 
-					<td th:text="${area.id}"></td>					
-					<td th:text="${area.descripcion}"></td>
-					<td th:text="${area.nombreArea}"></td>
+					<td th:text="${area.id}"></td>
+					<td th:text="${area.nombreArea}"></td>					
+					<td th:text="${area.descripcion}"></td>					
 					<td>
 						<a th:href="@{/editar/}+${area.id}" class="btn btn-warning">Edit</a>
-						<a th:href="@{/eliminar/}+${area.id}" class="btn btn-danger">Eliminar</a>
+						<a th:onclick="eliminar([[${area.id}]])" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>	
+	<script type="text/javascript" src="funciones.js"></script>
 </body>
 </html>
